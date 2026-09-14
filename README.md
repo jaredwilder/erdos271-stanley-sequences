@@ -7,7 +7,32 @@ This repository is the canonical public home for the estate's #271 Stanley-seque
 
 ## Structural endpoint
 
-The retained late-stage reduction relates the growth scale of `a_k` to the multiplicity of the reflected support set `U_k={2a_j-a_i}`. In the audited regime this turns the desired `a_k` growth law into a statement about the scale of the maximum reflection multiplicity rather than leaving it as an opaque sequence-growth question.
+The retained late-stage reduction relates the growth scale of `a_k` to the **mean oriented-reflection multiplicity**
+
+```text
+μ_k = binom(k,2) / |U_k|,
+U_k = {2a_j-a_i : 0 ≤ i < j < k}.
+```
+
+For every fixed seed, the audited theorem gives
+
+```text
+a_k = Θ(k + k²/μ_k),
+```
+
+and with the external superlinearity input for infinite 3-AP-free sequences this becomes
+
+```text
+a_k = Θ(k²/μ_k).
+```
+
+Thus the historical `A(4)` target `a_k = Θ(k²/log k)` is equivalent inside the proved dictionary to `μ_k = Θ(log k)` and to `|U_k| = Θ(k²/log k)`.
+
+This is a statement about **mean support multiplicity**, not maximum multiplicity. The maximum-multiplicity and per-scale-multiplicity data belong to the finite audit and route diagnostics; in fact, the proposed absolute per-scale multiplicity bound was falsified.
+
+Read the human theorem extraction: [`REFLECTION-MULTIPLICITY-GROWTH.md`](REFLECTION-MULTIPLICITY-GROWTH.md).
+
+The `A(4)` asymptotic itself remains open.
 
 ## Source layout
 
