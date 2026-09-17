@@ -1,41 +1,56 @@
-# Erdős #271 — Stanley sequences
+# Erdős #271 — Stanley Sequences
 
-**Author:** Jared Wilder  
-**Status:** audited sequence-growth research program; no claim that the parent problem is fully closed.
+**Jared Wilder**
 
-This repository is the canonical public home for the estate's #271 Stanley-sequence work. The recovered program contains a **184-entry audited ledger** together with exact growth identities, reflection-support multiplicity reductions, computational checkpoints, failed routes, and terminal obligations.
+Structural and computational work on the growth of Stanley sequences.
 
-## Structural endpoint
+The project contains a **184-entry audited ledger** together with exact growth identities, reflection-support multiplicity reductions, computational checkpoints, and a compact surviving reduction of the asymptotic problem.
 
-The retained late-stage reduction relates the growth scale of `a_k` to the **mean oriented-reflection multiplicity**
+## Reflection-multiplicity reduction
+
+Let
 
 ```text
 μ_k = binom(k,2) / |U_k|,
 U_k = {2a_j-a_i : 0 ≤ i < j < k}.
 ```
 
-For every fixed seed, the audited theorem gives
+For every fixed seed, the retained theorem gives
 
 ```text
-a_k = Θ(k + k²/μ_k),
+a_k = Θ(k + k²/μ_k).
 ```
 
-and with the external superlinearity input for infinite 3-AP-free sequences this becomes
+Using the external superlinearity input for infinite 3-AP-free sequences, this sharpens to
 
 ```text
 a_k = Θ(k²/μ_k).
 ```
 
-Thus the historical `A(4)` target `a_k = Θ(k²/log k)` is equivalent inside the proved dictionary to `μ_k = Θ(log k)` and to `|U_k| = Θ(k²/log k)`.
+Accordingly, the historical `A(4)` target
 
-This is a statement about **mean support multiplicity**, not maximum multiplicity. The maximum-multiplicity and per-scale-multiplicity data belong to the finite audit and route diagnostics; in fact, the proposed absolute per-scale multiplicity bound was falsified.
+```text
+a_k = Θ(k²/log k)
+```
 
-Read the human theorem extraction: [`REFLECTION-MULTIPLICITY-GROWTH.md`](REFLECTION-MULTIPLICITY-GROWTH.md).
+is equivalent, within this dictionary, to
 
-The `A(4)` asymptotic itself remains open.
+```text
+μ_k = Θ(log k)
+```
 
-## Source layout
+and to
 
-Exact historical source bytes are migrated under `source/` from `jaredwilder/unpublished-math-papers/erdos271-stanley/`.
+```text
+|U_k| = Θ(k²/log k).
+```
 
-The repository preserves corrections and retired lemmas alongside surviving reductions. Historical novelty is not inferred from an internal `PROVED` or `COURT` label.
+The reduction is about **mean oriented-reflection multiplicity**. Maximum multiplicity and per-scale multiplicity are separate finite diagnostics; one proposed absolute per-scale bound was falsified during the campaign.
+
+For the cleaned theorem extraction, see [`REFLECTION-MULTIPLICITY-GROWTH.md`](REFLECTION-MULTIPLICITY-GROWTH.md).
+
+## Source
+
+Historical source material is preserved under `source/`, migrated from `jaredwilder/unpublished-math-papers/erdos271-stanley/`.
+
+The full `A(4)` asymptotic remains the open endpoint. The repository’s contribution is the exact reduction above together with the computational and structural evidence surrounding it.
